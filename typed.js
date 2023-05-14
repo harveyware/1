@@ -1,5 +1,5 @@
 new Typed('#typed', {
-    strings: ['undetected', 'free','best',"HW#8635"], 
+    strings: ['undetected','best','cheap','winning'], 
     typeSpeed: 65,
     delaySpeed: 150,
     showCursor: true,

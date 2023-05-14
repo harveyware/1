@@ -1,5 +1,5 @@
 new Typed('#typed', {
-    strings: ['lua dev', ' c++ dev','html dev','c# dev'], 
+    strings: ['undetected', 'free','best',"HW#8635"], 
     typeSpeed: 65,
     delaySpeed: 150,
     showCursor: true,

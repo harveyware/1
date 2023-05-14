@@ -52,6 +52,23 @@ body {
     background: rgb(17, 17, 17);
 }
 
+.typed-cursor{
+    opacity: 1;
+}
+.typed-cursor.typed-cursor--blink{
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+}
+@keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+}
+@-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+}
+
 .back {
     width: 100%;
 }
@@ -109,7 +126,7 @@ a {
 
 a:hover {
     transition: .4s !important;
-    color: #fff !important
+    color: #fff !important;
 }
 
 #center {
@@ -128,6 +145,25 @@ a:hover {
     right: 40%;
     text-align: center;
     font-family: 'Consolas', monospace;
+}
+
+#bords {
+    position: fixed;
+    top: 1.5%;
+    left: 0%;
+    right: 0%;
+    text-align: center;
+    font-family: 'Consolas', monospace;
+}
+
+#bord {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    width: 10000000000000px;
+    height: 45px;
+    background-color: rgb(5, 5, 5);
 }
 
 #overlay-toggle:checked~.overlay {

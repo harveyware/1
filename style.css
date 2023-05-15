@@ -121,12 +121,43 @@ body {
 
 a {
     text-decoration: none;
-    color: gray !important
+    color: gray !important;
+    text-shadow: 0 0 0.1em
 }
 
 a:hover {
     transition: .4s !important;
     color: #fff !important;
+    text-shadow: 0 0 0.27em;
+    animation-name: hov;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+}
+
+#social_titles:hover:after {
+    color: pink;
+    content: " {working}";
+    text-shadow: 0 0 0.27em;
+    animation-name: hov;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
+}
+
+#content .title {
+    color: pink;
+}
+
+#content .title span {
+    color: #fff;
+}
+
+#social_titles:hover span {
+    text-decoration: none;
+    color: lightpink !important;
+    text-shadow: 0 0 0.1em;
+    animation-name: hov;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
 }
 
 #center {
@@ -192,8 +223,19 @@ a:hover {
 
 @keyframes fade {
     to {
-        opacity: 0;
+        opacity: 0.1;
     }
+}
+
+@keyframes hov {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+    0% { display: block; }
+    100% { display: none; }
 }
 
 @keyframes hide {

@@ -122,25 +122,16 @@ body {
 a {
     text-decoration: none;
     color: gray !important;
-    text-shadow: 0 0 0.1em
+    text-shadow: 0 0 0.1em;
+    animation-name: hov;
+    animation-delay: 0.3s;
+    animation-duration: 3s;
 }
 
 a:hover {
     transition: .4s !important;
     color: #fff !important;
     text-shadow: 0 0 0.27em;
-    animation-name: hov;
-    animation-delay: 0.3s;
-    animation-duration: 3s;
-}
-
-#social_titles:hover:after {
-    color: pink;
-    content: " {working}";
-    text-shadow: 0 0 0.27em;
-    animation-name: hov;
-    animation-delay: 0.3s;
-    animation-duration: 3s;
 }
 
 #content .title {
@@ -148,16 +139,43 @@ a:hover {
 }
 
 #content .title span {
-    color: #fff;
+    color: white;
+}
+
+#social_titles:hover:after {
+    color: rgb(255, 192, 203);
+    content: " {working}";
+    text-shadow: 0 0 0.27em;
 }
 
 #social_titles:hover span {
     text-decoration: none;
     color: lightpink !important;
     text-shadow: 0 0 0.1em;
-    animation-name: hov;
-    animation-delay: 0.3s;
-    animation-duration: 3s;
+}
+
+#social_titles_cheat:hover:after {
+    color: rgb(255, 192, 203);
+    content: " {true}";
+    text-shadow: 0 0 0.27em;
+}
+
+#social_titles_cheat:hover span {
+    text-decoration: none;
+    color: lightpink !important;
+    text-shadow: 0 0 0.1em;
+}
+
+#social_titles_spoofer:hover:after {
+    color: rgb(255, 192, 203);
+    content: " {true}";
+    text-shadow: 0 0 0.27em;
+}
+
+#social_titles_spoofer:hover span {
+    text-decoration: none;
+    color: lightpink !important;
+    text-shadow: 0 0 0.1em;
 }
 
 #center {

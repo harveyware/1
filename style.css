@@ -126,16 +126,18 @@ a {
     animation-name: hov;
     animation-delay: 0.3s;
     animation-duration: 3s;
+    transition: .5s;
 }
 
 a:hover {
     transition: .4s !important;
     color: #fff !important;
     text-shadow: 0 0 0.27em;
+    transition: .5s;
 }
 
 #content .title {
-    color: pink;
+    color: rgb(95, 158, 160);
 }
 
 #content .title span {
@@ -143,39 +145,44 @@ a:hover {
 }
 
 #social_titles:hover:after {
-    color: rgb(255, 192, 203);
+    color: cadetblue;
     content: " {working}";
     text-shadow: 0 0 0.27em;
+    transition: .5s;
 }
 
 #social_titles:hover span {
     text-decoration: none;
-    color: lightpink !important;
+    color: white !important;
     text-shadow: 0 0 0.1em;
+    transition: .5s;
 }
 
 #social_titles_cheat:hover:after {
-    color: rgb(255, 192, 203);
+    color: cadetblue;
     content: " {true}";
     text-shadow: 0 0 0.27em;
+    transition: .5s;
 }
 
 #social_titles_cheat:hover span {
     text-decoration: none;
-    color: lightpink !important;
+    color: lightcyan !important;
     text-shadow: 0 0 0.1em;
 }
 
 #social_titles_spoofer:hover:after {
-    color: rgb(255, 192, 203);
+    color: cadetblue;
     content: " {true}";
     text-shadow: 0 0 0.27em;
+    transition: .5s;
 }
 
 #social_titles_spoofer:hover span {
     text-decoration: none;
-    color: lightpink !important;
+    color: lightcyan !important;
     text-shadow: 0 0 0.1em;
+    transition: .5s;
 }
 
 #center {
@@ -232,25 +239,30 @@ a:hover {
 @media(hover: hover) {
     .hover {
         display: block;
+        transition: .5s;
     }
 
     .no-hover {
         display: none;
+        transition: .5s;
     }
 }
 
 @keyframes fade {
     to {
         opacity: 0.1;
+        transition: .5s;
     }
 }
 
 @keyframes hov {
     from {
         display: block;
+        transition: .5s;
     }
     to {
         display: none;
+        transition: .5s;
     }
     0% { display: block; }
     100% { display: none; }
@@ -259,6 +271,7 @@ a:hover {
 @keyframes hide {
     to {
         visibility: hidden;
+        transition: .5s;
     }
 }
 
@@ -268,4 +281,5 @@ a:hover {
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    transition: .5s;
 }

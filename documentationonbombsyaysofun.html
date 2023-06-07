@@ -67,46 +67,13 @@
 </body>
 
 <body oncontextmenu="false">
-    <input type="checkbox" autocomplete="off" id="overlay-toggle">
-    <audio loop="" preload="auto" id="audio">
-        <source src="audio.mp3" type="audio/mp3">
-    </audio>
-    <video muted="muted" loop="" playsinline="" preload="auto" class="fullscreen bg-video" id="video">
-        <source src="video.mp4" type="video/mp4">
-    </video>
-        <input type="checkbox" autocomplete="off" id="overlay-toggle">
-        <div class="overlay fullscreen">
-            <div id="center">
-                <label for="overlay-toggle" onclick="audio();video()">
-                    <span class="hover" style="font-size: 18px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.1em white;">continue</span>
-                </label>
+    <section class="fullscreen text-content">
+        <div id="center">
+            <div id="content">
+                <div class="title" style="font-size: 40px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.17em;" id="main_title"><span>H</span>W</div>
             </div>
         </div>
-        <section class="fullscreen text-content">
-            <div id="center">
-                <div id="content">
-                    <div class="title" style="font-size: 40px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.17em;" id="main_title"><span>H</span>W</div>
-                </div>
-            </div>
-            <div id="center">
-                <br><br><br><br><br>
-                <span id="typed" style="font-size: 15px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.32em white;"></span>
-            </div>
-        </section>
+    </section>
 </body>
 
-<script type="text/javascript" language="javascript">
-    function changeHome(img){
-       document.getElementById('social_titles_home').src=img;
-    }
-</script>
-
-<script src="typed other.js"></script>
-<script src="main.js"></script>
 <script src="cursor.js"></script>
-<div id="socials">
-    <div id="bords">
-        <a href="index.html" style="font-size: 0px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.1em white;"><img id="social_titles_home" src="home.png" onmouseover="changeHome('homep.png')" onmouseout="changeHome('home.png')"></a>
-    </div>
-    <a href="cheat.html" id="social_titles_spoofer" style="font-size: 14px; font-family: 'Roboto Mono', monospace; text-shadow: 0 0 0.1em white;">download</a>
-</div>

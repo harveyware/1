@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luas</title>
+    <style>
+        body {
+            font-family: 'Arial', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+
+        header {
+            font-family: 'Ariel', serif;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        section {
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            background-color: #444;
+        }
+
+        textarea {
+            font-family: 'Arial', serif;
+            font-size: small;
+            border: 1px solid #333;
+            color: white;
+            background-color: #444;
+            line-height: -5;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            font-family: 'Arial', serif;
+            border: 1px solid #333;
+            color: white;
+            background-color: #444;
+            width: 100%;
+            line-height: 2.5;
+            text-align: left;
+            text-indent: 0.2%;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        #commentInput {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 7px;
+            box-sizing: border-box;
+            font-size: small;
+        }
+
+        .comment {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: small;
+        }
+
+        #commentInput::placeholder {
+            color: white;
+            font-size: small;
+        }
+
+        #commentInput:focus {
+            border: 1px solid #333;
+            color: white;
+            background-color: #444;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">DashBoard</a>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+    </nav>
+
+    <section>
+        <div id="comments"></div>
+        <textarea id="commentInput" placeholder="Add Comment"></textarea>
+        <button onclick="addComment()">Post Comment</button>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComments();
+        });
+
+        function addComment() {
+            var commentInput = document.getElementById('commentInput');
+            var commentText = commentInput.value.trim();
+
+            if (commentText !== '') {
+                var commentsDiv = document.getElementById('comments');
+
+                var comment = {
+                    text: commentText,
+                    timestamp: new Date().toLocaleString()
+                };
+
+                saveComment(comment);
+
+                appendComment(comment, commentsDiv);
+
+                commentInput.value = '';
+            }
+        }
+
+        function saveComment(comment) {
+            var comments = JSON.parse(localStorage.getItem('forumComments')) || [];
+            comments.push(comment);
+            localStorage.setItem('forumComments', JSON.stringify(comments));
+        }
+
+        function loadComments() {
+            var comments = JSON.parse(localStorage.getItem('forumComments')) || [];
+            var commentsDiv = document.getElementById('comments');
+
+            comments.forEach(function (comment) {
+                appendComment(comment, commentsDiv);
+            });
+        }
+
+        function appendComment(comment, container) {
+            var commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.textContent = comment.text + ' - ' + comment.timestamp;
+
+            container.appendChild(commentDiv);
+        }
+    </script>
+</body>
+
+</html>
